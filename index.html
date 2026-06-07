@@ -112,6 +112,30 @@
       color: var(--muted); letter-spacing: 2px;
     }
 
+    @media (max-width: 640px), (hover: none) {
+      #loader {
+        padding: 24px 18px;
+        gap: 18px;
+        justify-content: center;
+      }
+
+      .loader-name {
+        font-size: 1.45rem;
+        letter-spacing: 0.22em;
+        text-align: center;
+        line-height: 1.15;
+      }
+
+      .loader-bar-wrap {
+        width: min(72vw, 220px);
+      }
+
+      .loader-pct {
+        font-size: 0.64rem;
+        letter-spacing: 1.6px;
+      }
+    }
+
     /* ════════════════════════════════════════════════
        BACKGROUND CANVAS
     ════════════════════════════════════════════════ */
@@ -923,16 +947,16 @@
 
     /* ── Mobile: always show project links (no hover on touch) ── */
     @media (hover: none), (max-width: 900px) {
-      .proj-overlay {
+      .proj-actions {
+        position: static;
         opacity: 1;
-        background: transparent;
-        align-items: flex-end;
-        justify-content: flex-end;
-        padding: 12px;
-        pointer-events: auto;
-      }
-      .proj-link {
         transform: none !important;
+        padding: 14px 16px 16px;
+        flex-wrap: wrap;
+      }
+      .proj-action-btn {
+        flex: 1 1 120px;
+        justify-content: center;
         backdrop-filter: blur(12px);
         background: rgba(6,6,10,0.65);
       }
